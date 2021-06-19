@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Rock Paper Scissors</title>
+  <meta name="description" content="Rock Paper Scissors">
+
+</head>
+
+<body>
+  <p>Game of Rock-Paper-Scissors</p>
+  <script>
+
+let playerInputVar = null;
+let yourPoints = 0;
+let computerPoints = 0;
+
+function playerSelection(){ //Creates prompt to look for user's String input
+
+try { // I used try..catch code to remove the error that is being outputed inside console, occuring because the Cancel prompt button is not working properly
+  //makes it possible for the script to execute without crash after using the Cancel button
+
+  let playerInput = prompt('Enter rock/paper or scissors','Ex: rock')
+    let playerInputInsensitive = playerInput.toUpperCase() // We transform every String into Uppercase so that we can manipulated it easier (make it case insensitive)
+    
+    if (playerInputInsensitive === 'ROCK'){
+   console.log('Rock')
+   playerInputVar = 'Rock';}
+ 
+     else   if (playerInputInsensitive === 'PAPER'){
+   console.log('Paper')
+   playerInputVar =  'Paper';}
+ 
+    else    if (playerInputInsensitive === 'SCISSORS'){
+   console.log('Scissors')
+   playerInputVar =  'Scissors';}
+
+ else{
+   alert('Please enter a valid option', )
+ }
+}
+
+catch (error)
+{
+  //console.log(error);
+}
+}
+
+ 
+
+function computerPlay(){  //function that outputs random integer and transforms the output into String value
+ const computerNumber = Math.floor(Math.random()*3 +1)
+	if (computerNumber ===1){
+    console.log('Rock');
+  return 'Rock'}
+      else if (computerNumber===2){
+        console.log('Paper')
+        return 'Paper'
+      } else if (computerNumber ===3){
+        console.log('Scissors')
+        return 'Scissors'
+      }
+    }
+  
+
+
+    function compare(choice1, choice2){ //compares the String inputs from both user and computer value outputs
+
+        if (choice1==='Rock' &&choice2==='Scissors' ){
+          
+          console.log("Your points equal to:" + ++yourPoints);
+  alert('You won, Rock beats Scissors!');
+}
+  else if (choice1==='Rock' && choice2 === 'Paper'){
+
+    console.log("Computer points equal to:" + ++computerPoints);
+  alert('Computer won, Paper beats Rock!');
+  }
+  else if (choice1===choice2){
+  alert('Round is tied!');
+  }
+  else if (choice1==='Paper' && choice2 === 'Paper'){
+  alert('Round is tied!');
+  }
+  else if (choice1==='Paper' && choice2 === 'Rock'){
+ 
+          console.log("Your points equal to: " + +yourPoints);
+    alert('You won, Paper beats Rock!');
+  }
+  else if (choice1 ==='Paper' && choice2 === 'Scissors'){
+
+    console.log("Computer points equal to:" + ++computerPoints);
+  alert('Computer won, Scissors beat Paper!');
+  }
+  else if (choice1 ==='Scissors' && choice2 === 'Paper'){
+ 
+          console.log("Your points equal to:" + ++yourPoints);
+    alert('You won, Scissors beat Paper!');
+  }
+    else if (choice1 ==='Scissors' && choice2 === 'Rock'){
+
+      console.log("Computer points equal to:" + ++computerPoints);
+  alert('Computer won, Rock beats Scissors!');
+  }
+    else if (choice1 ==='Scissors' && choice2 === 'Scissors'){
+  alert('Round is tied!');
+  }
+  else{
+    alert(choice1 + " " + choice2);
+  } 
+
+      }
+      function game(){ //looping the compare function 5 times
+     for (i=0; i<5; i++)
+     {
+      playerSelection();
+      if (playerInputVar == null)
+      {
+        alert("You have cancelled the action.");
+      }
+      else
+      {
+        compare(playerInputVar, computerPlay());
+      }
+
+     }
+    }
+game();
+if (yourPoints> computerPoints){
+  alert('Congratulations you won the 5 round game of Rock-Paper-Scissors');
+}
+  else if(computerPoints<yourPoints){
+    alert('The computer got the best of the 5 rounds, better luck next time');
+  }
+  else if(computerPoints===yourPoints){
+    alert('The final score is tied');
+  }
+
+  </script>
+</body>
+</html>
