@@ -1,19 +1,22 @@
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="utf-8">
 
-  <title>Rock Paper Scissors</title>
+  <title>Rock Paper Scissors - game</title>
   <meta name="description" content="Rock Paper Scissors">
 
 </head>
 
 <body>
-  <p>Game of Rock-Paper-Scissors</p>
-  <script>
+  <h1>This game is played inside the browser's console, <br>Please make sure to open the cosnole <br> so that you can watch the results of the game!</h1>
+  <p>Read <a href="https://balsamiq.com/support/faqs/browserconsole/" target="_blank">here</a> how to open the console in your browser</p>
+  <button onclick="game(), noGame()">Play the Game</button>
+  <script>//Written by @viktordotcom
 
 let playerInputVar = null;
 let yourPoints = 0;
 let computerPoints = 0;
+
 
 function playerSelection(){ //Creates prompt to look for user's String input
 
@@ -117,24 +120,30 @@ function computerPlay(){  //function that outputs random integer and transforms 
       if (playerInputVar == null)
       {
         alert("You have cancelled the action.");
-      }
+        break;
+      } 
       else
       {
         compare(playerInputVar, computerPlay());
       }
 
      }
-    }
-game();
-if (yourPoints> computerPoints){
+     if (yourPoints> computerPoints){
   alert('Congratulations you won the 5 round game of Rock-Paper-Scissors');
 }
   else if(computerPoints<yourPoints){
     alert('The computer got the best of the 5 rounds, better luck next time');
   }
+ 
+    }
+function noGame(){
+  if(computerPoints===0 && yourPoints===0){
+    alert('No game was played')
+  }
   else if(computerPoints===yourPoints){
     alert('The final score is tied');
   }
+}
 
   </script>
 </body>
