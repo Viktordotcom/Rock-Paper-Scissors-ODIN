@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+html{
+    font-family: 'Acme', sans-serif;
+}
+h1 {
+    text-align: center;
+    color: #FFD60A;
+}
+#title{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.btns{
+    width: 120px;
+    margin: 10px;
+    background-color: #FFC300;
+    border:1px solid rgb(9, 164, 236);
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 80px;
+    height: 120px;
+    transform: rotate(-90deg);
+}
+.btns:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#scissors{
+    font-size: 100px;
+    height: 120px;
+}
+#paper{
+    transform: rotate(0deg), scale(1.2)
+}
+p{
+    text-align: center;
+    color: azure;
+    font-size: 40px;
+}
+#computerPara{
+    color: #FFC300;
+}
+
+.cpuOutputClass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cpubtns{
+    display: none;
+    width: 120px;
+    margin: 10px;
+    background-color: #FFC300;
+    border:1px solid rgb(9, 164, 236);
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 80px;
+    height: 120px;
+    transform: rotate(-90deg);
+}
+#cpuPaper{
+    transform: rotate(0deg);
+}
+.playing {
+    display: inline-block;
+    border-color: #ff0800;
+    box-shadow: 0 0 1rem #ffc600;
+}  
+#outputDiv{
+display: flex;
+background-color: #000814;
+color: cornsilk;
+height: 100px;
+margin: 40px 100px;
+border-radius: 20px;
+text-align: center;
+font-size: 1.5rem;
+}
+
+#currentRoundLog{
+display: flex;
+background-color: #003566;
+color: cornsilk;
+height: 100px;
+margin: 40px 100px;
+border-radius: 20px;
+font-size: 1.5rem;
+}
+
+body{
+   background-color: #001D3D;
+}
